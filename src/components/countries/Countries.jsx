@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-key */
 import { useEffect } from "react";
 import { useState } from "react";
-import Country from "./Country/Country";
+import Country from "../Country/Country";
+import './countries.css'
 
 const Countries = () => {
     const [countries , setCountries] = useState([]);
@@ -13,11 +14,12 @@ const Countries = () => {
     return (
         <div>
            <h3>Countries: {countries.length}</h3>
+           <div className="country-container">
            {
-            countries.map(country => <Country key={country.cca3} country={country}>
-                
-            </Country>)
+            countries.map(country => 
+            <Country key={country.cca3} country={country}> </Country>)
            } 
+           </div>
         </div>
     )
 };
